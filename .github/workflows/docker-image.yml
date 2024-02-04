@@ -17,4 +17,4 @@ jobs:
         ref: "develop"
         
     - name: Build the Docker image
-      run: docker-compose build
+      run: custom-images/docker-compose.yml build
