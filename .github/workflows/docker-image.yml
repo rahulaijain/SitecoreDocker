@@ -5,16 +5,12 @@ on:
     branches: "develop"
   
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v3
       with: 
-        ref: "develop"
-        
-    - name: Build the Docker image
-      run: custom-images/docker-compose.yml build
+        ref: "develop"        
+    - name: Build Docker Compose
+      run: docker-compose -f custom-images/docker-compose.yml build
