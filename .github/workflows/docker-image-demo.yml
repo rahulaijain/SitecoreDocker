@@ -1,0 +1,14 @@
+name: Docker Image CI Test
+on:
+  push:
+    branches: "developrj"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+      with:
+        ref: "developrj"
+    - name: Build the Docker image
+      run: docker-compose -f getting-started/docker-compose.yml build --tag rj-image
