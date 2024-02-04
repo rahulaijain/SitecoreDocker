@@ -1,0 +1,20 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: "develop"
+  
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+      with: 
+        ref: "develop"
+        
+    - name: Build the Docker image
+      run: docker-compose build
